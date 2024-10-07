@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.luck.video.lib.widget.commondialog.RoundLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    app:rv_cornerRadius="3dp"
+    app:rv_backgroundColor="@color/white">
+
+    <com.luck.video.lib.widget.commondialog.RoundTextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="19sp"
+        android:textColor="#333333"
+        android:gravity="center"
+        android:visibility="gone"
+        android:text="标题" />
+
+    <com.luck.video.lib.widget.commondialog.RoundTextView
+        android:id="@+id/tv_content"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:gravity="left"
+        android:lineSpacingMultiplier="1.2"
+        android:text="提示文字"
+        android:textColor="#333333"
+        android:textSize="17sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="20dp"
+        android:background="#d5d5d5" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <com.luck.video.lib.widget.commondialog.RoundTextView
+            android:id="@+id/tv_button1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_button_common"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="#999999"
+            android:textSize="17sp" />
+
+        <View
+            android:visibility="gone"
+            android:id="@+id/v_divider"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <com.luck.video.lib.widget.commondialog.RoundTextView
+            android:visibility="gone"
+            android:id="@+id/tv_button2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_button_common"
+            android:gravity="center"
+            android:text="确认"
+            android:textColor="#999999"
+            android:textSize="17sp" />
+    </LinearLayout>
+</com.luck.video.lib.widget.commondialog.RoundLinearLayout>

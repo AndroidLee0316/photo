@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="4px"
+        android:paddingRight="4px"
+        android:paddingLeft="4px"
+        android:layout_above="@+id/rl_bottom"
+        android:layout_below="@+id/ll_title"
+        android:background="#ffffff" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/ll_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#ffffff"
+        android:paddingTop="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_title_left"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:text="相册"
+                android:drawableLeft="@drawable/picture_temp_ic_back"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/iv_title_left"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/picture_selector_button"
+                android:visibility="gone"
+                android:paddingLeft="16dp"
+                android:paddingRight="25dp"
+                android:src="@drawable/picture_temp_ic_back_white" />
+
+            <TextView
+                android:id="@+id/tv_title_name"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:drawablePadding="10dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxEms="12"
+                android:maxLength="11"
+                android:minEms="8"
+                android:singleLine="true"
+                android:text="所有照片"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_title_right"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:paddingLeft="5dip"
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:text="取消"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+
+
+            <TextView
+                android:id="@+id/tv_picture_position"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="11dp"
+                android:background="@drawable/picture_selector_local_picture"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="1"
+                android:textColor="#ffffff"
+                android:textSize="13sp"
+                android:visibility="gone" />
+            <View
+                android:id="@+id/view_line"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_below="@+id/tv_title_name"
+                android:background="#e8e8e8" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_preview"
+        android:background="#333333"
+        android:alpha="0.9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="7.5dp"
+        android:visibility="gone"
+        android:layout_above="@+id/rl_bottom"
+        android:overScrollMode="never" />
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="#ffffff"
+        android:alpha="0.9"
+        android:layout_alignParentBottom="true">
+        <TextView
+            android:id="@+id/tv_browse"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:textColor="#333333"
+            android:textSize="17sp"
+            android:alpha="0.3"
+            android:enabled="false"
+            android:text="预览"
+            tools:text="预览" />
+
+        <com.pasc.lib.widget.roundview.RoundTextView
+            android:id="@+id/tv_select"
+            android:layout_width="84dp"
+            android:layout_height="36dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="确定"
+            android:enabled="false"
+            android:alpha="0.3"
+            app:rv_backgroundColor="@color/theme_color"
+            app:rv_cornerRadius="3dp"
+            android:layout_marginRight="15dp"
+            android:textColor="#ffffff"
+            android:textSize="17sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5px"
+            android:background="#e8e8e8" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

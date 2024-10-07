@@ -1,0 +1,33 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.pasc.lib.picture">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+
+    <application android:allowBackup="true">
+        <activity android:name="com.soundcloud.android.crop.CropImageActivity" />
+        <activity
+            android:name="com.pasc.lib.picture.pictureSelect.PictureSelectActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/PictureAppTheme" />
+        <activity
+            android:name="com.pasc.lib.picture.pictureSelect.NewPictureSelectActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/PictureAppTheme" />
+
+        <activity
+            android:name="com.pasc.lib.picture.pictureSelect.activity.AlbumsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/PictureAppTheme" />
+
+        <activity
+            android:name="com.pasc.lib.picture.pictureSelect.activity.AlbumsSelectActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/PictureAppTheme" />
+
+    </application>
+
+</manifest>

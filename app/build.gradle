@@ -1,0 +1,58 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-aspectjx'
+aspectjx {
+}
+
+android {
+    compileSdkVersion 30
+    defaultConfig {
+        applicationId "com.pasc.lib.piture.demo"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api 'com.android.support:appcompat-v7:27.1.1'
+    api 'com.android.support:multidex:1.0.0'
+    api 'com.android.support:recyclerview-v7:27.1.1'
+    api 'com.github.bumptech.glide:glide:4.7.1'
+    annotationProcessor "com.github.bumptech.glide:compiler:4.7.1"
+    api 'com.github.bumptech.glide:okhttp3-integration:4.7.1'
+    api 'io.reactivex.rxjava2:rxjava:2.1.3'
+    api 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation "com.zxs.lib:widget:1.0.0"
+    api   'com.github.AndroidLee0316:base:support_1.0.0'
+//    if (isMavenBuild == 'false') {
+        api project(':LibPicture')
+        api project(':LibVideo')
+        api project(':LibSilicompressor')
+        api project(':LibFile')
+//    } else {
+//        api "com.pasc.lib:PascPhoto:${rootProject.ext.libPhotoVersion}"
+//        api "com.pasc.lib:video:${rootProject.ext.libVideoVersion}"
+//        api "com.pasc.lib:silicompressor:${rootProject.ext.libSilicompressorVersion}"
+//        api "com.pasc.lib:PascFileSelector:${rootProject.ext.libFileSelectorVersion}"
+//    }
+    api 'com.squareup.leakcanary:leakcanary-android:1.6.2'
+    testImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.2'
+    // api "com.iceteck.silicompressorr:silicompressor:2.2.2"
+}

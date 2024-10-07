@@ -1,0 +1,94 @@
+import java.text.SimpleDateFormat
+
+ext {
+    Date sysDate = new Date();
+    SimpleDateFormat dataFormat = new SimpleDateFormat("yyMMdd");
+    String strDate = dataFormat.format(sysDate);
+
+    String buildNo = "$System.env.BuildNo";
+    def pre_ver = "1.4."
+    if (buildNo == ("null")) {
+        SimpleDateFormat timeFormat = new SimpleDateFormat("HHmm");
+        buildNo = timeFormat.format(sysDate);
+    }
+    versionName = pre_ver + strDate + "." + buildNo
+    versionCode = Integer.parseInt(pre_ver.replace(".", "") + "0");   //102
+//    versionName = "1.4.0"
+//    versionCode = 140
+
+    // Sdk and tools
+    minSdkVersion = 21
+    targetSdkVersion = 30
+    compileSdkVersion = 30
+    buildToolsVersion = '30.0.3'
+
+    // App dependencies
+    gradleVersion = '3.1.2'
+    bonreeVersion = '1.8'
+    neenbedanktPluginVersion = '2.2.1.7'
+    butterknifePluginVersion = '8.4.0'
+
+    supportLibraryVersion = '27.1.1'
+    rxlifecycle2Version = '2.2.1'
+    okhttp3Version = '3.11.0'
+    leakcanaryVersion = '1.5.4'
+    stethoVersion = '1.5.0'
+    dbflowVersion = '4.2.4'
+    rxbindingVersion = '2.1.1'
+    glideVersion = '4.7.1'
+    arouterApi = '1.2.1.1'
+    arouterCompiler = '1.1.2.1'
+    constraint_layout = '1.1.2'
+    cookieJar = 'v0.9.3'
+    logger = '2.2.0'
+    bugly = '2.6.6.1'
+    gson = '2.8.2'
+    eventbus = '3.1.1'
+    multidexVersion = '1.0.2'
+    crashHandler = 'v2.3.1'
+    guava = '22.0'
+    typeBuilder = '1.0'
+    recyclerview_animators = '1.0.3@aar'
+    butterknife = '8.8.1'
+    butterknifeAPT = '8.8.1'
+    tangram = '3.1.3'
+
+    retrofit2Version = '2.4.0'
+    rxjava2Version = '2.1.12'
+    rxandroid2Version = '2.0.2'
+
+    cfgs = [
+            compileSdkVersion    : 30,
+            buildToolsVersion    : "30.0.3",
+            minSdkVersion        : 21,
+            targetSdkVersion     : 30,
+            versionCode          : 10,
+            versionName          : "2.0.0",
+            ucropVersionCode     : 22,
+            ucropVersionName     : "2.2.0-native",
+
+            //open version control
+            androidSupportVersion: "27.1.1",
+    ]
+
+    if (isRelease == 'false') {
+        MAVEN_URL = 'http://10.25.84.18:8089/nexus/content/repositories/Android-Snapshots/'
+        libPhotoVersion = "1.1.8-SNAPSHOT"
+        libVideoVersion = "1.0.4-SNAPSHOT"
+        libSilicompressorVersion = "1.0.3-SNAPSHOT"
+        libFileSelectorVersion = "0.0.1-SNAPSHOT"
+    } else {
+        MAVEN_URL = 'http://maven.paic.com.cn/repository/maven-public'
+        libPhotoVersion = "1.2.5"
+        libVideoVersion = "1.0.6"
+        libSilicompressorVersion = "1.0.4"
+        libFileSelectorVersion = "0.0.1"
+    }
+
+    LIB_SILICOMPRESSOR = "com.iceteck.silicompressorr:silicompressor:2.2.2"
+    LIB_ISO_PARSER = 'com.googlecode.mp4parser:isoparser:1.1.22'
+    LIB_ASPECTJRT = 'org.aspectj:aspectjrt:1.8.9'
+    aarWidgetVersion = '1.1.8'
+    aarLibBaseVersion = '1.2.7'
+
+}

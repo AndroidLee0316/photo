@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <com.pasc.lib.widget.toolbar.PascToolbar
+        android:id="@+id/pasc_activity_folder_toolbar"
+        style="@style/WhiteFontToolbar"
+        android:background="@color/white"
+        app:back_icon="@drawable/ic_back_black"
+        app:enable_under_divider="true"
+        app:support_translucent_status_bar="false"
+        app:title="@string/pasc_file_selector"
+        app:title_text_color="@color/pasc_primary_text"
+        app:under_divider_color="@color/divider"
+        app:menu_text_color="@color/pasc_primary_text"/>
+
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tl_file"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        app:tabIndicatorColor="@color/pasc_primary"
+        app:tabIndicatorHeight="3dp"
+        app:tabSelectedTextColor="@color/pasc_primary"
+        app:tabTextColor="@color/pasc_primary_text" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/pasc_divider" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_file"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>

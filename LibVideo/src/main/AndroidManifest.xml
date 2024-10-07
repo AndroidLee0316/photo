@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.luck.video.lib">
+
+    <application android:theme="@style/AppTheme">
+
+        <activity
+            android:name="com.luck.video.lib.PictureSelectorActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name="com.luck.video.lib.PicturePreviewActivity" />
+        <activity
+            android:name="com.luck.video.lib.PictureVideoPlayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="sensor" />
+        <activity android:name="com.luck.video.lib.PictureExternalPreviewActivity" />
+        <activity android:name="com.luck.video.lib.PicturePlayAudioActivity" />
+
+
+    </application>
+
+</manifest>
